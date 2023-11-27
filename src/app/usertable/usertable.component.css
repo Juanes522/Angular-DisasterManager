@@ -1,0 +1,38 @@
+.displayregistration {
+    margin-top: 160px;
+    position: relative;
+    margin-bottom: 100px;
+    
+}
+
+.tabledisplay {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+:host ::ng-deep .flex {
+    display: flex;
+}
+
+:host ::ng-deep .align-items-center {
+    align-items: center;
+}
+
+:host ::ng-deep .justify-content-between {
+    justify-content: space-between;
+}
+
+:host ::ng-deep .reload .p-button{
+    border-radius: 10px;
+    background-color: darkcyan;
+}
+
+.coldescription{
+    max-width: 15rem;
+}
+
+.colfix{
+    overflow: auto;
+}

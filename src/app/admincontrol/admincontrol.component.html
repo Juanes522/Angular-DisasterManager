@@ -1,0 +1,336 @@
+<div class="displayregistration">
+    <div class="tabledisplay">
+        <div class="card movecard" [ngStyle]="{'box-shadow':'0px 0px 0px 0.5px'}">
+            <p-toast></p-toast>
+            <p-toolbar styleClass="mb-4 gap-2" class="movebuttons">
+                <ng-template pTemplate="left">
+
+                    <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2 new"
+                        (click)="openNew()"></button>
+                    <!--[label]="Delete"         [disabled]="!selectedProducts || !selectedProducts.length" -->
+                </ng-template>
+
+            </p-toolbar>
+
+        </div>
+
+        <div class="card" [ngStyle]="{'box-shadow':'0px 0px 0px 0.5px'}">
+            <!-- [value]="products"         [(selection)]="selectedProducts"-->
+            <p-table #dt [value]="disastersA" [rows]="10" [paginator]="true"
+                [globalFilterFields]="['uuid', 'country', 'disasterName']" [tableStyle]="{ 'min-width': '75rem' }"
+                [rowHover]="true" dataKey="id"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                [showCurrentPageReport]="true">
+
+                <ng-template pTemplate="caption">
+                    <div class="flex align-items-center justify-content-between">
+                        <h5 class="m-0">Manage Natural Disasters</h5>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+
+                            <input pInputText type="text" (input)="onFilter($event)" placeholder="Search..." />
+
+
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th class="tablesize">
+                        </th>
+                        <th pSortableColumn="uuid" class="colum7">Identifier<p-sortIcon
+                                field="name"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="country">Country<p-sortIcon field="price"></p-sortIcon></th>
+                        <th pSortableColumn="disasterName" class="colum7">Disaster Name<p-sortIcon
+                                field="category"></p-sortIcon></th>
+                        <th class="colum5">Investigators Identifier</th>
+
+                        <th>Image</th>
+
+                        <th class="coldescription">Description</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-disaster>
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="disastersA"></p-tableCheckbox>
+                        </td>
+                        <td>{{disaster.uuid}}</td>
+                        <td>{{disaster.country}}</td>
+                        <td>{{disaster.disasterName}}</td>
+                        <td>{{disaster.investigators}}</td>
+                        <td><img [src]="disaster.imageURL" [alt]="" width="100" class="shadow-4" /></td>
+                        <td class="coldescription colfix">{{disaster.description}}</td>
+
+                        <td>
+
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
+                                (click)="editDisaster(disaster.uuid)"></button>
+
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
+                                (click)="deleteDisaster(disaster.uuid, disaster.disasterName)"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+
+
+                    <div class="flex align-items-center justify-content-between">In total there are {{ disastersA ?
+                        disastersA.length : 0 }} disasters registered.</div>
+
+                </ng-template>
+            </p-table>
+        </div>
+
+        <!--(ngSubmit)="register()"-->
+        <form [formGroup]="formGroupRegistration"   >
+            <p-dialog [(visible)]="disasterDialog" [style]="{ width: '800px' }" [modal]="true" styleClass="p-fluid"
+                [closable]="false">
+                <ng-template pTemplate="content">
+
+                    <!-- contenido del formulario de registro -->
+
+
+                    <div class="titleregistrationdisplay">
+                        <div class="titlesize">
+                            <p>Register a Natural Disaster</p>
+                        </div>
+
+
+                        <div class="inputcontainer p-fluid grid ">
+
+                            <span class="p-float-label md:col-4 moveinput">
+                                <input pInputText id="unicname" (keypress)="onKeyPress2($event)"
+                                    formControlName="uuid" />
+                                <label for="unicname">Identifier</label>
+                            </span>
+
+                            <div class="card flex p-col-10  justify-content-center">
+
+
+                                <p-dropdown [options]="countries" [(ngModel)]="selectedCountry"
+                                    [ngModelOptions]="{standalone:true}" optionLabel="name" [filter]="true"
+                                    filterBy="name" [showClear]="true" placeholder="Select a Country" id="countrylist"
+                                    (ngModelChange)="onCountryChange($event)">
+
+                                    <!--(onChange)="onCountryChange()"-->
+                                    <ng-template pTemplate="selectedItem">
+                                        <div class="flex align-items-center " *ngIf="selectedCountry">
+                                            <div>{{ selectedCountry.name }}</div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template let-country pTemplate="item">
+                                        <div class="flex align-items-center">
+                                            <div>{{ country.name }}</div>
+                                        </div>
+                                    </ng-template>
+                                </p-dropdown>
+                            </div>
+                        </div>
+
+
+                        <div class="inputcontainer p-fluid grid">
+
+
+                            <div class="card flex justify-content-center moveinput">
+                                <p-dropdown class="dropsize" [options]="disasters" [(ngModel)]="selectedDisaster"
+                                    [ngModelOptions]="{standalone:true}" optionLabel="name" [filter]="true"
+                                    filterBy="name" [showClear]="true" placeholder="Select a Disaster"
+                                    (onChange)="onChange($event)" id="disasterlist"
+                                    (ngModelChange)="onTypeDisasterChange($event)" [disabled]="isDisasterNameDisable">
+                                    <!--(onChange)="onDisasterSelected()" [disabled]="isDisasterNameDisable"-->
+
+                                    <ng-template pTemplate="selectedItem">
+                                        <div class="flex align-items-center" *ngIf="selectedDisaster">
+                                            <div>{{ selectedDisaster.name }}</div>
+                                        </div>
+                                    </ng-template>
+
+
+
+                                    <ng-template let-disaster pTemplate="item">
+                                        <div class="flex align-items-center">
+
+                                            <div *ngIf="disaster.name === 'Other '">
+                                                {{ disaster.name }}<i class="pi pi-plus"></i>
+                                            </div>
+
+                                            <div *ngIf="disaster.name !== 'Other '">{{ disaster.name }}</div>
+
+                                        </div>
+                                    </ng-template>
+                                </p-dropdown>
+                            </div>
+                            <!-- identificador UUID, nombre -->
+                            <div class="card flex justify-content-center">
+
+                                <p-multiSelect #multiSelect id="registered" [options]="investigatorsRegistered"
+                                    placeholder="Registered" optionLabel="name" (onChange)="onSelecteionChange($event)">
+                                </p-multiSelect>
+                                <!--[(ngModel)]="selectedInvestigatorsRegistered" [ngModelOptions]="{standalone:true} (onChange)="limitSelection()"""-->
+
+
+                            </div>
+
+                        </div>
+
+                        <!-- input atributos extra -->
+                        <div class="inputcontainer p-fluid grid">
+
+                            <span class="p-float-label md:col-4 ">
+                                <p-inputNumber inputId="waveHeight" mode="decimal" [min]="2.5" [max]="600" [step]="0.1" 
+                            formControlName="waveHeight" *ngIf="selectedDisaster?.name === 'Tsunami'" [minFractionDigits]="1" [maxFractionDigits]="1" >
+                            </p-inputNumber>
+
+                                <!--<input pInputText id="waveHeight" (keypress)="onKeyPress3($event)"
+                                    formControlName="waveHeight" *ngIf="selectedDisaster?.name === 'Tsunami'" maxlength="3"/>-->
+                                <label for="waveHeight" *ngIf="selectedDisaster?.name === 'Tsunami'">Wave Height in meters</label>
+                            </span>
+
+                            <span class="p-float-label md:col-4 ">
+                                <p-inputNumber inputId="magnitude" mode="decimal" [min]="0.1" [max]="11" [step]="0.1" 
+                            formControlName="magnitude" *ngIf="selectedDisaster?.name === 'Earthquake'" [minFractionDigits]="1" [maxFractionDigits]="1" >
+                            </p-inputNumber>
+
+                                <!--<input pInputText id="magnitude" (keypress)="onKeyPress3($event)"
+                                    formControlName="magnitude" *ngIf="selectedDisaster?.name === 'Earthquake'" maxlength="2"/>-->
+                                <label for="magnitude" *ngIf="selectedDisaster?.name === 'Earthquake'">Magnitude in Ritcher scale</label>
+                            </span>
+
+                            <span class="p-float-label md:col-4 ">
+                                <p-inputNumber  inputId="maximumTemperature" mode="decimal" [min]="27" [max]="50" [step]="0.1" 
+                            formControlName="maximumTemperature" *ngIf="selectedDisaster?.name === 'Extreme Heat'" [minFractionDigits]="1" [maxFractionDigits]="1" >
+                            </p-inputNumber>
+
+                                <!--<input pInputText id="maximumTemperature" (keypress)="onKeyPress3($event)"
+                                    formControlName="maximumTemperature" *ngIf="selectedDisaster?.name === 'Extreme Heat'" maxlength="2"/>-->
+                                <label for="maximumTemperature"
+                                    *ngIf="selectedDisaster?.name === 'Extreme Heat'">Max Temperature in °C</label>
+                            </span>
+
+                            <span class="p-float-label md:col-4 ">
+                                <p-inputNumber  inputId="scope" mode="decimal" [min]="0" [max]="20" [step]="0.1" 
+                            formControlName="scope" *ngIf="selectedDisaster?.name === 'Volcanic Eruption'" [minFractionDigits]="1" [maxFractionDigits]="1" >
+                            </p-inputNumber>
+
+                                <!--<input pInputText id="scope" (keypress)="onKeyPress3($event)" formControlName="scope"
+                                    *ngIf="selectedDisaster?.name === 'Volcanic Eruption'" maxlength="2"/>-->
+                                <label for="scope" *ngIf="selectedDisaster?.name === 'Volcanic Eruption'">Scope in
+                                    Km</label>
+                            </span>
+
+                            <span class="p-float-label md:col-4 ">
+                                <p-inputNumber  inputId="magnitudeh" mode="decimal" [min]="100" [max]="250" [step]="0.1" 
+                            formControlName="magnitude" *ngIf="selectedDisaster?.name === 'Hurricane'" [minFractionDigits]="1" [maxFractionDigits]="1" >
+                            </p-inputNumber>
+
+                                <!--<input pInputText id="magnitudeh" (keypress)="onKeyPress3($event)"
+                                    formControlName="magnitude" *ngIf="selectedDisaster?.name === 'Hurricane'" maxlength="3"/>-->
+                                <label for="magnitudeh" *ngIf="selectedDisaster?.name === 'Hurricane'">Magnitude in Km/h</label>
+                            </span>
+                        </div>
+
+                        <div class="inputcontainer p-fluid grid">
+
+                            <div class="addinvestigatosbuton moveinput">
+                                <p-fileUpload [style]="{width: '100%'}" mode="basic" name="demo[]"
+                                    url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*"
+                                    [maxFileSize]="1000000" (onUpload)="onBasicUploadAuto($event)" [auto]="true"
+                                    chooseLabel="Browse">
+                                </p-fileUpload>
+                            </div>
+
+                            <div class="addinvestigatosbuton">
+                                <img class="moveimage" [src]="imageURL" alt="Upload Image" *ngIf="imageURL">
+                                <!--[src]="imageURL"-->
+                            </div>
+
+                        </div>
+
+
+                        <div class="inputcontainer p-fluid grid">
+
+                            <div>
+                                <span class="p-float-label">
+                                    <textarea id="float-input" rows="6" cols="53" pInputTextarea
+                                        formControlName="description" maxlength="175"></textarea>
+                                    <label for="float-input">Description</label>
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <!--dialogo 1-->
+
+                        <p-dialog [(visible)]="visibledis" [modal]="true" [style]="{ width: '40vw' }"
+                            [draggable]="false" [resizable]="false" [closable]="false">
+                            <h3 class="titledialogdisaster">Write The Type Of Disaster</h3>
+                            <div class="divnewdisaster">
+
+                                <span class="p-float-label md:col-4">
+                                    <input pInputText *ngIf="showInputField" [(ngModel)]="newItem"
+                                        (keypress)="onKeyPress($event)" id="newdisaster" class="newdisaster"
+                                        formControlName="disasterName" />
+                                    <label for="newdisaster" class="movelabelnewdisaster">Disaster Type</label>
+                                </span>
+
+                            </div>
+
+                            <div class="p-fluid grid movecomp">
+
+                                <p-button pRipple label="Cancel" icon="pi pi-times"
+                                    class="moveinput3 confirmregistration" (click)="hideDialogNewDisaster()"
+                                    id="cancelrester"></p-button>
+
+                                <p-button pRipple label="Confirm" icon="pi pi-check"
+                                    class="moveinput2 confirmregistration" (click)="confirmDialogNewDisaster()"
+                                     id="confirmiregister"></p-button>
+
+                            </div>
+
+                        </p-dialog>
+
+                        <!--dialogo 2-->
+
+                        <p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '50vw', height: '72vh'}"
+                            [draggable]="false" [resizable]="false" [closable]="false">
+                            <h3 class="titledialogdisaster">Register Investigators</h3>
+
+
+                            <div class="registered1 p-fluid grid">
+
+                                <p-multiSelect id="registered" [options]="investigatorsRegistered"
+                                    [(ngModel)]="selectedInvestigatorsRegistered" placeholder="Registered"
+                                    optionLabel="identifier" (onChange)="limitSelection()"
+                                    formControlName="investigators"></p-multiSelect>
+
+                            </div>
+
+                        </p-dialog>
+
+                    </div>
+
+
+                </ng-template>
+
+                <ng-template pTemplate="footer">
+
+                    <button type="button" pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"
+                        (click)="hideDialog()" ></button>
+
+                    <button pButton pRipple label="Save" type="submit" icon="pi pi-check" class="p-button-text"
+                        (click)="register()" (click)="saveProduct()"></button>
+
+
+                </ng-template>
+            </p-dialog>
+        </form>
+
+
+        <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
+
+
+    </div>
+
+</div>

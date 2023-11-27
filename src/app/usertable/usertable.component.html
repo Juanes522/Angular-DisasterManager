@@ -1,0 +1,43 @@
+<div class="displayregistration">
+    <div class="tabledisplay">
+        <div class="card" [ngStyle]="{'box-shadow':'0px 0px 0px 1.5px'}">
+            <p-table [value]="disasters" [tableStyle]="{'min-width': '60rem'}">
+                <ng-template pTemplate="caption">
+                    <div class="flex align-items-center justify-content-between">
+                        Natural Disasters
+                        <p-button class="reload" icon="pi pi-refresh" (onClick)="getDataAndRefreshTable()"></p-button>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Identifier</th>
+                        <th>Country</th>
+                        <th>Disaster Name</th>
+                        <th>Investigators Identifier</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-disaster>
+                    <tr>
+
+                        <td>{{disaster.uuid}}</td>
+                        <td>{{disaster.country}}</td>
+                        <td>{{disaster.disasterName}}</td>
+                        <td>{{disaster.investigators}}</td>
+                        <td><img [src]="disaster.imageURL" [alt]="" width="100" class="shadow-4" /></td>
+                        <td class="coldescription colfix">{{disaster.description}}</td>
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="flex align-items-center justify-content-between">
+
+                        In total there are {{disasters ? disasters.length : 0 }} disasters registered.
+
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+.formregistration {
+    margin-top: 100px;
+    padding: 10px 30px 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.5);
+    max-width: 370px;
+    background: white;
+    border: 8px solid rgba(225, 225, 225, 0.8);
+    border-radius: 15px;
+    margin: 50px auto 0;
+    position: relative;
+    z-index: 99;
+}
+
+.titleregistrationdisplay {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.titlesize {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.displayregistration {
+    margin-top: 160px;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.userspace{
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    max-width: 350px;
+    justify-content: center;
+}
+
+.passwordspace{
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.accessadmincontrollcontainer{
+    margin-top: 40px;
+    max-width: 100px;
+    display: flex;
+    justify-content: center;
+    max-width: 350px;
+}
+
+:host ::ng-deep .accessadmincontroll .p-button{
+    border-radius: 10px;
+}
+
+
+
+

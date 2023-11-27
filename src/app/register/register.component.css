@@ -1,0 +1,187 @@
+.formregistration {
+    margin-top: 100px;
+    padding: 10px 30px 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.5);
+    max-width: 550px;
+    background: white;
+    border: 8px solid rgba(225, 225, 225, 0.8);
+    border-radius: 15px;
+    margin: 50px auto 0;
+    position: relative;
+    z-index: 99;
+}
+
+.displayregistration {
+    margin-top: 160px;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.titleregistrationdisplay {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.titlesize {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    margin-top: -1rem;
+}
+
+.moveinput {
+    margin-right: 20px;
+}
+
+.inputcontainer {
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.dropsize {
+    width: 100%;
+    display: block;
+}
+
+.btn-outline-seconday:focus,
+.btn-outline-secondary:hover {
+    color: inherit;
+    background-color: transparent;
+    border-color: black;
+    width: 100%;
+}
+
+.btn-lg {
+    width: 100%;
+    color: inherit;
+    background-color: transparent;
+    border-color: black;
+}
+
+#disastersmenu {
+    width: 205px;
+    color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 0, 0, 0.6);
+}
+
+.btn-text {
+    font-size: 16px;
+}
+
+#unicname {
+    width: 205px;
+}
+
+#countrylist {
+    width: 205px;
+}
+
+#disasterlist {
+    width: 205px;
+}
+
+#numinvestigators {
+    width: 205px;
+}
+
+.titledialogdisaster {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.divnewdisaster {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.newdisaster {
+    margin-bottom: 20px;
+}
+
+.moveconfirmnew {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.addinvestigatosbuton {
+    width: 205px;
+}
+
+.dropdown {
+    text-align: left;
+}
+
+.moveimage {
+    width: 205px;
+    height: 105px;
+}
+
+.confirmregister {
+    width: 90%;
+}
+
+.movecomp {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.moveinput2{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.moveinput3{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.registered1{
+    margin-bottom: 80px;
+    justify-content: center;
+    display: flex;
+}
+
+#registered{
+    width: 205px;
+}
+
+.adminredirectcontainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: -60px;
+}
+
+.adminredirect{
+    text-decoration: none !important;
+    color: white;
+}
+
+:host ::ng-deep .confirmnewinv .p-button{
+    border-radius: 10px;
+}
+
+:host ::ng-deep .confirmregistration .p-button{
+    border-radius: 10px;
+}
+
+#confirmiregister{
+    width: 150PX;
+}
+
+#cancelrester{
+    width: 150px;
+}

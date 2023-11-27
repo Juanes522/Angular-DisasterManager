@@ -1,0 +1,319 @@
+.headercontainer {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header {
+    z-index: 99;
+}
+
+.headertextconf {
+    --bs-text-opacity: 1;
+    color: black;
+    text-decoration: none !important;
+}
+
+.homeref {
+    width: 80px;
+    height: 32;
+    font-size: 2.5rem;
+}
+
+.stuck {
+    width: 100%;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 991 !important;
+    background: white;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+header.header-v1 {
+    position: relative;
+    background-color: white;
+    margin-top: 1px;
+}
+
+header.header-v1 .header-main {
+    position: static;
+}
+
+.p-relative {
+    position: relative !important;
+}
+
+.p-static {
+    position: static !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+header .origin-page {
+    padding: 20px 0 30px;
+    padding-left: 25px;
+    display: inline-block;
+    max-height: 80px;
+}
+
+header.header-v1 .header-inner {
+    padding-right: 110px;
+}
+
+.transparent-button .p-button {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: black;
+}
+
+.menu-bar {
+    height: 32px;
+    width: 36px;
+    position: absolute;
+    cursor: pointer;
+    margin-top: 30px;
+    top: -3px;
+    right: 45px;
+    padding-left: 10px;
+}
+
+.menu-bar span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: all 0.35s;
+    -moz-transition: all 0.35s;
+}
+
+.menu-bar span.one {
+    top: 6px;
+}
+
+.menu-bar span.two {
+    top: 0;
+    bottom: 0;
+}
+
+.menu-bar span.three {
+    bottom: 6px;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.main-menu .area-mainmenu .area-inner .block {
+    margin-bottom: 0;
+}
+
+.area-mainmenu .menu-toggle {
+    display: none;
+}
+
+header .area-mainmenu .navigation {
+    position: static;
+}
+
+.shortmenuoff {
+    background: white;
+    position: fixed !important;
+    left: 0;
+    width: 100%;
+    max-width: 350px;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.2);
+    padding-top: 0;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+}
+
+
+.shortmenuoff.show-view {
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -ms-transition: all 0.35s;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -moz-transform: translateX(0);
+}
+
+.shortmenuoff .after-off {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.shortmenuoff .close-menu {
+    display: block !important;
+    visibility: visible !important;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 15px 0;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    color: black;
+}
+
+.shortmenuoff .close-menu i {
+    font-size: 24px;
+}
+
+.shortmenuoff .close-menu:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.shortmenuoff .block {
+    border-bottom: 1px solid white;
+    padding: 20px;
+}
+
+.shortmenuoff .block .block-content::before,
+.shortmenuoff .block .block-content::after {
+    content: " ";
+    display: table;
+}
+
+.shortmenuoff .block .block-content:after {
+    clear: both;
+}
+
+.shortmenuoff .gva-navigation .gva-menu {
+    padding: 10px 0 0;
+    width: 100% !important;
+    background: none !important;
+}
+
+.shortmenuoff .gva-navigation .gva-menu>li {
+    display: block;
+    clear: both;
+    width: 100%;
+    margin-bottom: 8px !important;
+    padding-bottom: 8px !important;
+    padding-top: 2px !important;
+    border-bottom: 1px solid white;
+}
+
+.shortmenuoff .gva-navigation .gva-menu>li:last-child {
+    border-bottom: none;
+}
+
+.shortmenuoff .gva-navigation .gva-menu>li:after,
+.shortmenuoff .gva-navigation .gva-menu>li:before {
+    content: none;
+    display: none;
+}
+
+.shortmenuoff .gva-navigation .gva-menu>li>a {
+    display: block;
+    width: 100%;
+    line-height: 32px;
+    font-size: 15.5px;
+    padding: 0 !important;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: black;
+}
+
+.shortmenuoff .gva-navigation .gva-menu>li>a:after,
+.shortmenuoff .gva-navigation .gva-menu>li>a:before {
+    content: none;
+    display: none;
+}
+
+.shortmenuoff .gva-navigation .gva-menu>li>a:hover {
+    color: black !important;
+    background-color: none !important;
+}
+
+.shortmenuoff .gva-navigation .gva-menu>li.menu-item--active-trail>a {
+    color: black !important;
+}
+
+.shortmenuoff .gva-navigation .gva-menu li a {
+    position: relative;
+    display: block;
+}
+
+.shortmenuoff .gva-navigation .gva-menu li a {
+    color: black;
+}
+
+.menu-bar.show-view span.two {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.menu-bar.show-view span.one,
+.menu-bar.show-view span.three {
+    top: 0;
+    bottom: 0;
+    -webkit-transform: rotate(45eg);
+    transform: rotate(45eg);
+}
+
+.menu-bar.show-view span.three {
+    -webkit-transform: rotate(-45eg);
+    transform: rotate(-45eg);
+}
+
+.rooterdisplay {
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-decoration: none !important;
+    display: block;
+}
+
+.rooterdisplay2 {
+    font-size: 18px;
+    margin-top: 23px;
+    margin-left: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+}
+
+@media (min-width: 550px) {
+    .minsize {
+        display: block !important;
+    }
+}
+
+@media (max-width: 708px) {
+    .maxsize {
+        display: none !important;
+    }
+}
+
+.moverouters {
+    text-align: end;
+    width: 65%;
+}
+
+.arrowsize {
+    font-size: 20px;
+}

@@ -1,0 +1,36 @@
+
+<form [formGroup]="formGroupLogin" (ngSubmit)="login()">
+    
+    <div class="displayregistration">
+
+        <div class="formregistration">
+
+            <div class="userspace p-fluid">
+                <label htmlFor="adminusername">Username *</label>
+
+                <input pInputText id="adminusername" aria-describedby="username-help" formControlName="username" />
+
+            </div>
+
+            <div class="passwordspace p-fluid">
+
+                <label htmlFor="username">Password *</label>
+                <div class="card flex justify-content-center">
+                    <p-password id="adminpassword" [(ngModel)]="value" [feedback]="false" [toggleMask]="true"
+                        formControlName="password"></p-password>
+                </div>
+
+            </div>
+
+            <div class="accessadmincontrollcontainer p-fluid">
+
+                <p-button type="submit" class="accessadmincontroll" label="Log In" ></p-button>
+
+                <!--routerLink="/admincontrol"-->
+
+            </div>
+        </div>
+
+    </div>
+</form>
+<p-toast></p-toast>

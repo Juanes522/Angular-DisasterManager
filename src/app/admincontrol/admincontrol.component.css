@@ -1,0 +1,262 @@
+.displayregistration {
+    margin-top: 130px;
+    position: relative;
+    margin-bottom: 100px;   
+}
+
+.tabledisplay {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.movebuttons{
+    margin-bottom: -22px;
+    margin-top: -0px;
+}
+
+.movecard{
+    margin-bottom: 40px;
+}
+
+:host ::ng-deep .flex {
+    display: flex;
+}
+
+:host ::ng-deep .align-items-center {
+    align-items: center;
+}
+
+:host ::ng-deep .justify-content-between {
+    justify-content: space-between;
+}
+
+:host ::ng-deep .mr-2{
+    margin-right: 20px;
+}
+
+:host ::ng-deep .m-0{
+    margin: 0px;
+}
+
+:host ::ng-deep .new ,.delete{
+    border-radius: 10px;
+}
+
+:host ::ng-deep .mb-4{
+    margin-bottom: 40px;
+}
+
+:host ::ng-deep .gap-2{
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+}
+
+:host ::ng-deep .p-button-rounded{
+    border-radius: 50px;
+}
+
+
+
+
+.titleregistrationdisplay {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+}
+
+.titlesize {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    margin-top: -1rem;
+}
+
+.moveinput {
+    margin-right: 20px;
+}
+
+.inputcontainer {
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.dropsize {
+    width: 100%;
+    display: block;
+}
+
+.btn-outline-seconday:focus,
+.btn-outline-secondary:hover {
+    color: inherit;
+    background-color: transparent;
+    border-color: black;
+    width: 100%;
+}
+
+.btn-lg {
+    width: 100%;
+    color: inherit;
+    background-color: transparent;
+    border-color: black;
+}
+
+#disastersmenu {
+    width: 205px;
+    color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 0, 0, 0.6);
+}
+
+.btn-text {
+    font-size: 16px;
+}
+
+#unicname {
+    width: 205px;
+}
+
+#countrylist {
+    width: 205px;
+}
+
+#countrylist .p-dropdown{
+    height: 50px;
+}
+
+#disasterlist {
+    width: 205px;
+}
+
+#numinvestigators {
+    width: 205px;
+}
+
+.titledialogdisaster {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.divnewdisaster {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.newdisaster {
+    margin-bottom: 20px;
+}
+
+.moveconfirmnew {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.addinvestigatosbuton {
+    width: 205px;
+}
+
+.dropdown {
+    text-align: left;
+}
+
+.moveimage {
+    width: 205px;
+    height: 105px;
+}
+
+.confirmregister {
+    width: 90%;
+}
+
+.movecomp {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.moveinput2{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.moveinput3{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.registered1{
+    margin-bottom: 80px;
+    justify-content: center;
+    display: flex;
+}
+
+#registered{
+    width: 205px;
+}
+
+.adminredirectcontainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: -60px;
+}
+
+.adminredirect{
+    text-decoration: none !important;
+    color: white;
+}
+
+:host ::ng-deep .confirmnewinv .p-button{
+    border-radius: 10px;
+}
+
+:host ::ng-deep .confirmregistration .p-button{
+    border-radius: 10px;
+}
+
+.movetextarea{
+    margin-bottom: 40px;
+}
+
+#confirminvesadmin{
+    width: 150px;
+}
+
+#cancelinvadmin{
+    width: 150PX;
+}
+
+.tablesize{
+    width: rem;
+}
+
+.colum7{
+    min-width: 7rem;
+}
+
+.colum5{
+    min-width: 5rem;
+}
+
+.coldescription{
+    max-width: 15rem;
+}
+
+.colfix{
+    overflow: auto;
+}

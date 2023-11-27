@@ -1,0 +1,185 @@
+<!--<router-outlet></router-outlet>-->
+<section>
+    <div id="disastercarousel" class="carousel slide corousel-item" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/images/incendio.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/avalancha.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/volcan.webp" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/tornado.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/tsunami japon.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/terremoto turquia.jpg" class="d-block w-100">
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#disastercarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#disastercarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section>
+
+    <div class="titlesection2">
+        <h3>Most Relevant Natural Disasters</h3>
+    </div>
+
+    <div class="cardsdisplay">
+
+        <div class="card2">
+            <p-card header="Hurricane Katrina, United States 2005" [style]="{ width: '230px' }">
+                <ng-template pTemplate="header">
+                    <img alt="Card" height="135px" src="assets/images/hurricane 2005.jpg" />
+                </ng-template>
+                <p>
+                    Struck the southeastern coast of the US state of Florida on August 25, 2005, with winds of 130
+                    kilometers
+                    per hour, causing heavy rainfall damage, which resulted in terrible flooding. It caused more than
+                    1800
+                    deaths and $125 billion in damages.
+                </p>
+            </p-card>
+        </div>
+
+        <div class="card2">
+            <p-card header="Tsunami and Earthquake, Japan 2011" [style]="{ width: '230px' }">
+                <ng-template pTemplate="header">
+                    <img alt="Card" src="assets/images/japan 2011.jpg" />
+                </ng-template>
+                <p>
+                    On March 11, 2011, a powerful 9.1 magnitude earthquake ocurred 371 kilometers northwest of Tokyo,
+                    with
+                    a depth of 24 kilometers. The earthquake cauused a tsunami with nine-meter waves and the total
+                    number
+                    of confirmed deaths and missing persons is more than 22000
+                </p>
+            </p-card>
+        </div>
+
+        <div class="card2">
+            <p-card header="Earthquake, Hiti 2010" [style]="{ width: '230px' }">
+                <ng-template pTemplate="header">
+                    <img alt="Card" src="assets/images/haiti.jpg" />
+                </ng-template>
+                <p>
+                    On January 12, 2012, a devastating earthquake measuring 7.0 on the Richter scale struck Haiti,
+                    killing more
+                    than 200000 people and displacing more than two million. Among the dead were 102 UN staff members,
+                    the largest
+                    loss of life in a single event in the history of the UN.
+                </p>
+            </p-card>
+        </div>
+
+        <div class="card2">
+            <p-card header="Tsunami, Southeast Asia 2004" [style]="{ width: '230px' }">
+                <ng-template pTemplate="header">
+                    <img alt="Card" height="135px" src="assets/images/Tsunami 2004.jpg" />
+                </ng-template>
+                <p>
+                    On December 26, 2004, an earthquake measuring 9.1 on the moment magnitude scale in the Indian Ocean
+                    triggered
+                    a series of devastating tidal waves, the death toll in excess of 275000, not counting the thousands
+                    of people
+                    missingm resulting in one of the largest natural disasters to occur during the 21st century.
+                </p>
+            </p-card>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="titlesection3">
+        <h3>Recent Event</h3>
+    </div>
+
+    <div class="videosection">
+
+        <div class="video1">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xj2yKIXc0Qg?si=mh_SvntCAwIv1raF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <div class="video2">
+
+            <h4 class="tturquia">Earthquake in Turkey</h4>
+            <p class="videodescription">
+
+                Earthquake in Turkey in 2023, on February 6, a
+                magnitude 7.8 earthquake struck Turkey and Syria,
+                leaving tens of thousands dead and widespread damage.
+                Two weeks later, a magnitude 6.3 quake struck Turkey's
+                Hatay province. As of March 6, 2020, hundreds of thousands
+                of people were still in need of adequate shelter and sanitation,
+                and only 10% of the $1 billion requested to help survivors had
+                been collected. The February 6 earthquake was the worst disaster
+                in Turkey's modern history.
+                
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+    <footer class="py-4 py-md-5 mt-5 footercolor">
+        <div class="px-md-3">
+
+            <div class="row2">
+                <div class="col-lg-3 mb-3 homerefdisplay">
+                    <a class="nameinline namecenter footertextconf" href="/">
+                        <span class="pi pi-home homeref"></span>
+                        <span class="fs-5">Disaster Manager</span>
+                    </a>
+
+                </div>
+
+                <div class="generalinf">
+                    <h4 class="titleginfo fs-5">General Information</h4>
+                    <div class="listcontainer">
+                        <ul class="listconf small">
+                            <li class="mb-2">
+                                Avenida Carrera 9 # 131 A-40 - Bogotá D.C
+                            </li>
+                            <li class="mb-2">
+                                Exclusive contact mail: disastermanager@gmail.com
+                            </li>
+                            <li class="mb-2">
+                                Register and stay informed about natural disasters
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </footer>
+
+
+
+</section>

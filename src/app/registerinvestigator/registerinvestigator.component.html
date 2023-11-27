@@ -1,0 +1,45 @@
+
+
+
+<form [formGroup]="formGroupRegisterInvestigators" (ngSubmit)="registerInv()">
+    <div class="displayregistration">
+
+        <div class="formregistration">
+
+            <div class="titleregistrationdisplay titlesize">
+                <p>Register a Investigator</p>
+            </div>
+
+
+            <div class="userspace p-fluid">
+                <span class="p-float-label md:col-4 moveinput">
+
+                    <input pInputText id="investigatoridentifier" aria-describedby="username-help"
+                        formControlName="uuid" pKeyFilter="alphanum"/>
+                    <label for="investigatoridentifier">Identifier</label>
+                </span>
+            </div>
+
+            <div class="passwordspace p-fluid">
+
+                <div class="card flex justify-content-center">
+
+                    <span class="p-float-label md:col-4 moveinput">
+                        <input pInputText id="investigatorname" aria-describedby="username-help"
+                            formControlName="name" (keypress)="onKeyPress($event)"/>
+                        <label for="investigatoridentifier">Name</label>
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="accessadmincontrollcontainer p-fluid">
+
+                <p-button type="submit" class="accessadmincontroll" label="Register"></p-button>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+<p-toast></p-toast>

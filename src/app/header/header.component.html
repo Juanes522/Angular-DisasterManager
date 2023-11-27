@@ -1,0 +1,112 @@
+<div class="sticky-top">
+    <header class="header-v1">
+        <div class="sticky-wrapper col-md-3 col-sm-6 col-xs-8 ">
+            <div class="header-main gv-sticky-menu stuck">
+                <div class="headercontainer header-content-layout">
+                    <div class="header-main-inner p-relative">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-xs-8 branding">
+
+                                <div>
+                                    <a routerLink="/" class="nameinline namecenter headertextconf">
+                                        <span class="pi pi-home homeref origin-page "></span>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-9 col-sm-6 col-xs-4 p-static">
+                                    <div class="header-inner clearfix">
+                                        <div class="main-menu">
+                                            <div class="area-mainmenu">
+                                                <div class="area-inner">
+                                                    <div class="shortmenuoff" [class.show-view]="showMenu">
+
+                                                        <div class="close-menu" (click)="controllCloseMenu()">
+                                                            <i class="pi pi-times"></i>
+                                                        </div>
+
+                                                        <div>
+                                                            <nav class="block block-menu navigation menu--main">
+                                                                <div class="block-content">
+                                                                    <div class="gva-navigation">
+                                                                        <ul class="clearfix gva-menu">
+
+                                                                            <li class="menu-item">
+                                                                                <a routerLink="/register"
+                                                                                    class="rooterdisplay">
+                                                                                    Register Disaster
+                                                                                </a>
+                                                                            </li>
+                                                                            <li class="menu-item">
+                                                                                <a routerLink="/registerinvestigator"
+                                                                                    class="rooterdisplay">
+                                                                                    Register Investigator
+                                                                                </a>
+                                                                            </li>
+                                                                            <li class="menu-item">
+                                                                                <a routerLink="/list"
+                                                                                    class="rooterdisplay">
+                                                                                    Disaster List
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </nav>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div id="menu-bar"
+                                                        class="menu-bar d-xl-none d-lg-none d-md-none d-sm-none"
+                                                        (click)="controllMenu()">
+                                                        <span class="one"></span>
+                                                        <span class="two"></span>
+                                                        <span class="three"></span>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="minsize maxsize moverouters">
+
+
+                                <a routerLink="/register" class="rooterdisplay2">
+                                    Register Disaster
+                                    <span class="pi pi-angle-down arrowsize"></span>
+                                </a>
+
+                                <a routerLink="/registerinvestigator" class="rooterdisplay2">
+                                    Register Investigator
+                                    <span class="pi pi-angle-down arrowsize"></span>
+                                </a>
+
+                                <a routerLink="/list" class="rooterdisplay2">
+                                    Disaster List
+                                    <span class="pi pi-angle-down arrowsize"></span>
+                                </a>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+</div>
+
+<div class="container-fluid">
+
+    <router-outlet></router-outlet>
+
+</div>
